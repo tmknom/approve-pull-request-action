@@ -1,23 +1,37 @@
-name: Rename me
+name: Approve PR
 description: |
-  Template repository for creating Composite Action with GitHub Actions.
+  This action approves a specified pull request.
+
+  > [!IMPORTANT]
+  > Before using this action, ensure that GitHub Actions is allowed to create and approve pull requests in the repository.
+  > For more details, see: [Preventing GitHub Actions from creating or approving pull requests][approve_settings].
 
   ## Usage
 
-  Write usage for your Composite Action.
-
   ```yaml
     steps:
-      - name: Template
-        uses: tmknom/template-composite-action@v0
+      - name: Approve PR
+        uses: tmknom/approve-pr-action@v0
+        with:
+          pull-request: 10
   ```
+
+inputs:
+  pull-request:
+    required: true
+    description: Specifies the pull request to approve as a `number`, `url`, or `branch`.
 
 runs:
   using: composite
 
   steps:
-    - name: Run
-      shell: bash
+    - name: Approve
+      env:
+        PULL_REQUEST: ${{ inputs.pull-request }}
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
+        echo "::group::Approve"
         set -x
-        echo "Write steps"
+        gh pr review "${PULL_REQUEST}" --approve
+        echo "::endgroup::"
+      shell: bash

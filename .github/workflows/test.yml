@@ -91,6 +91,6 @@ jobs:
 
       - name: Revoke GitHub Token
         if: ${{ always() }}
-        uses: tmknom/revoke-github-token-action@aef39d8fd7bfb1baeab3a021fe7a78362a59501f # v0.1.1
+        uses: tmknom/revoke-github-token-action@9ed4395d40ab1dd9dcd63e33686dc0f8b38ca8b1 # v0.1.2
         with:
           token: ${{ steps.gha.outputs.token }}

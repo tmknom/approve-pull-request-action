@@ -35,7 +35,7 @@ jobs:
 
       - name: Private Generate GitHub Token
         id: gha
-        uses: tmknom/private-generate-github-token-action@d9ae9995ebd97650992c8568d0393c4d9e472fa4 # v0.3.2
+        uses: tmknom/private-generate-github-token-action@4f7589cea765899f019755045f5d0a9c70a980b6 # v0.3.3
         with:
           repositories: approve-pr-action
 

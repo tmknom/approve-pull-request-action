@@ -1,4 +1,4 @@
-name: Approve PR
+name: Approve Pull Request
 description: |
   This action approves a specified pull request.
 
@@ -10,8 +10,8 @@ description: |
 
   ```yaml
     steps:
-      - name: Approve PR
-        uses: tmknom/approve-pr-action@v0
+      - name: Approve Pull Request
+        uses: tmknom/approve-pull-request-action@v0
         with:
           pull-request: 10
   ```

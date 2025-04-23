@@ -1,4 +1,4 @@
-# approve-pr-action
+# approve-pull-request-action
 
 Approve a pull request.
 
@@ -16,8 +16,8 @@ This action approves a specified pull request.
 
 ```yaml
   steps:
-    - name: Approve PR
-      uses: tmknom/approve-pr-action@v0
+    - name: Approve Pull Request
+      uses: tmknom/approve-pull-request-action@v0
       with:
         pull-request: 10
 ```
@@ -94,4 +94,4 @@ For more details, see: [API Document][https://docs.github.com/en/rest/actions/pe
 See [GitHub Releases][releases].
 
 [approve_settings]: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#preventing-github-actions-from-creating-or-approving-pull-requests
-[releases]: https://github.com/tmknom/approve-pr-action/releases
+[releases]: https://github.com/tmknom/approve-pull-request-action/releases

@@ -26,9 +26,10 @@ jobs:
       packages: write
     steps:
       - name: Checkout default branch
-        uses: tmknom/checkout-action@v1
+        uses: tmknom/secure-checkout-action@v1
         with:
           ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: true
 
       - name: Git Config
         uses: tmknom/git-config-action@970621c4819d5a601bbac4a2bcf6f5f80d92a2e6 # v0.2.0
@@ -61,7 +62,7 @@ jobs:
           gh pr create --base "${base_branch}" --head "${pr_branch}" --title "${title}" --body ""
 
       - name: Checkout
-        uses: tmknom/checkout-action@v1
+        uses: tmknom/secure-checkout-action@v1
 
       - name: Exercise
         uses: ./
